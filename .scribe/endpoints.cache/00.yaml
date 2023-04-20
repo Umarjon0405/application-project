@@ -29,19 +29,19 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: quasi
+        example: voluptate
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: eos
+        example: velit
         type: string
         custom: []
     cleanBodyParameters:
-      username: quasi
-      password: eos
+      username: voluptate
+      password: velit
     fileParameters: []
     responses: []
     responseFields: []
@@ -160,27 +160,27 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: explicabo
+        example: corrupti
         type: string
         custom: []
       full_name:
         name: full_name
         description: ''
         required: true
-        example: sit
+        example: ducimus
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 4 characters.'
         required: true
-        example: ^Dwp3m9~|B
+        example: '4T#jR_[('
         type: string
         custom: []
     cleanBodyParameters:
-      username: explicabo
-      full_name: sit
-      password: ^Dwp3m9~|B
+      username: corrupti
+      full_name: ducimus
+      password: '4T#jR_[('
     fileParameters: []
     responses: []
     responseFields: []
@@ -223,27 +223,27 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: ut
+        example: voluptatum
         type: string
         custom: []
       full_name:
         name: full_name
         description: ''
         required: true
-        example: earum
+        example: autem
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 4 characters.'
         required: true
-        example: '2:DJ3Z|dwMgZL`C4YB0'
+        example: 'G9D5XH]('
         type: string
         custom: []
     cleanBodyParameters:
-      username: ut
-      full_name: earum
-      password: '2:DJ3Z|dwMgZL`C4YB0'
+      username: voluptatum
+      full_name: autem
+      password: 'G9D5XH]('
     fileParameters: []
     responses: []
     responseFields: []
@@ -320,11 +320,11 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: reprehenderit
+        example: et
         type: string
         custom: []
     cleanBodyParameters:
-      title: reprehenderit
+      title: et
     fileParameters: []
     responses: []
     responseFields: []
@@ -355,11 +355,11 @@ endpoints:
         name: id
         description: 'The ID of the application category.'
         required: true
-        example: 1
+        example: 5
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -406,11 +406,11 @@ endpoints:
         name: id
         description: 'The ID of the application category.'
         required: true
-        example: 1
+        example: 5
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -418,11 +418,11 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: similique
+        example: eaque
         type: string
         custom: []
     cleanBodyParameters:
-      title: similique
+      title: eaque
     fileParameters: []
     responses: []
     responseFields: []
@@ -453,11 +453,11 @@ endpoints:
         name: id
         description: 'The ID of the application category.'
         required: true
-        example: 1
+        example: 5
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -538,19 +538,27 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: beatae
+        example: sint
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: 'Provident qui ipsam eligendi ullam.'
+        example: 'Tempore voluptatem in error in.'
         type: string
         custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: 18
+        type: integer
+        custom: []
     cleanBodyParameters:
-      title: beatae
-      description: 'Provident qui ipsam eligendi ullam.'
+      title: sint
+      description: 'Tempore voluptatem in error in.'
+      category_id: 18
     fileParameters: []
     responses: []
     responseFields: []
@@ -581,11 +589,11 @@ endpoints:
         name: id
         description: 'The ID of the application type.'
         required: true
-        example: 3
+        example: 6
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -632,11 +640,11 @@ endpoints:
         name: id
         description: 'The ID of the application type.'
         required: true
-        example: 3
+        example: 12
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -644,19 +652,27 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: quis
+        example: consequatur
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: 'Fugit repellat veniam eaque dolorem aut vel.'
+        example: 'Eligendi rerum aperiam tenetur eveniet aspernatur adipisci omnis voluptatem.'
         type: string
         custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: 12
+        type: integer
+        custom: []
     cleanBodyParameters:
-      title: quis
-      description: 'Fugit repellat veniam eaque dolorem aut vel.'
+      title: consequatur
+      description: 'Eligendi rerum aperiam tenetur eveniet aspernatur adipisci omnis voluptatem.'
+      category_id: 12
     fileParameters: []
     responses: []
     responseFields: []
@@ -687,11 +703,11 @@ endpoints:
         name: id
         description: 'The ID of the application type.'
         required: true
-        example: 3
+        example: 8
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

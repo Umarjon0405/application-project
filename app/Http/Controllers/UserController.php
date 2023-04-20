@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\user\CreateUserRequest;
 use App\Http\Requests\user\LoginRequest;
+use App\Http\Resources\UniversalResource;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,7 +15,11 @@ class UserController extends Controller
     ){}
 
     public function index(){
-        return $this->user->get();
+        $search = request('search');
+        $data = $this->user
+            ->where('full_name', 'LIKE', "%$search%")
+            ->paginate(env('PG', 10));
+        return UniversalResource::collection($data);
     }
 
     public function store(CreateUserRequest $request){
@@ -52,6 +57,16 @@ class UserController extends Controller
             'password' => bcrypt($request['password']),
         ]);
 
+        return response()->json(['message' => env('MESSAGE_SUCCESS'), 'data' => $user], 201);
+    }
+    public function updateAuth(CreateUserRequest $request){
+        $request = $request->validated();
+        $user = $this->user->find(auth()->id());
+        $user->update([
+            'username' => $request['username'],
+            'full_name' => $request['full_name'],
+            'password' => bcrypt($request['password']),
+        ]);
         return response()->json(['message' => env('MESSAGE_SUCCESS'), 'data' => $user], 201);
     }
     public function auth(){

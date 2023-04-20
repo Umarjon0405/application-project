@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost:8000"
+            "value": "http:\/\/192.168.13.160:8000"
         }
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "89d514d2-3122-4c71-9de3-f7fe6e0dc448",
+        "_postman_id": "0ae93a00-41ed-498d-b72e-b7ab40e0e428",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -45,7 +45,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"quasi\",\"password\":\"eos\"}"
+                            "raw": "{\"username\":\"voluptate\",\"password\":\"velit\"}"
                         },
                         "description": "",
                         "auth": {
@@ -200,7 +200,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"explicabo\",\"full_name\":\"sit\",\"password\":\"^Dwp3m9~|B\"}"
+                            "raw": "{\"username\":\"corrupti\",\"full_name\":\"ducimus\",\"password\":\"4T#jR_[(\"}"
                         },
                         "description": "",
                         "auth": {
@@ -243,7 +243,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"ut\",\"full_name\":\"earum\",\"password\":\"2:DJ3Z|dwMgZL`C4YB0\"}"
+                            "raw": "{\"username\":\"voluptatum\",\"full_name\":\"autem\",\"password\":\"G9D5XH](\"}"
                         },
                         "description": "",
                         "auth": {
@@ -338,7 +338,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"reprehenderit\"}"
+                            "raw": "{\"title\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -359,7 +359,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "5",
                                     "description": "The ID of the application category."
                                 }
                             ]
@@ -427,7 +427,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "5",
                                     "description": "The ID of the application category."
                                 }
                             ]
@@ -449,7 +449,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"similique\"}"
+                            "raw": "{\"title\":\"eaque\"}"
                         },
                         "description": "",
                         "auth": {
@@ -470,7 +470,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "5",
                                     "description": "The ID of the application category."
                                 }
                             ]
@@ -584,7 +584,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"beatae\",\"description\":\"Provident qui ipsam eligendi ullam.\"}"
+                            "raw": "{\"title\":\"sint\",\"description\":\"Tempore voluptatem in error in.\",\"category_id\":18}"
                         },
                         "description": "",
                         "auth": {
@@ -605,7 +605,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "6",
                                     "description": "The ID of the application type."
                                 }
                             ]
@@ -673,7 +673,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "12",
                                     "description": "The ID of the application type."
                                 }
                             ]
@@ -695,7 +695,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"quis\",\"description\":\"Fugit repellat veniam eaque dolorem aut vel.\"}"
+                            "raw": "{\"title\":\"consequatur\",\"description\":\"Eligendi rerum aperiam tenetur eveniet aspernatur adipisci omnis voluptatem.\",\"category_id\":12}"
                         },
                         "description": "",
                         "auth": {
@@ -716,7 +716,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "8",
                                     "description": "The ID of the application type."
                                 }
                             ]

@@ -20,10 +20,12 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [UserController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get("/user", [UserController::class, 'auth']);
+    Route::put("/user", [UserController::class, 'updateAuth']);
     Route::get("/users", [UserController::class, 'index']);
     Route::post("/users", [UserController::class, 'store']);
     Route::put("/users/{id}", [UserController::class, 'update']);
 
+    Route::get('/application-category/all', [ApplicationCategoryController::class, 'getAll']);
     Route::apiResource('/application-categories', ApplicationCategoryController::class);
 
     Route::apiResource('/application-types', ApplicationTypeController::class);

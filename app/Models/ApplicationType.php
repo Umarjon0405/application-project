@@ -14,7 +14,8 @@ class ApplicationType extends Model
     protected $fillable = [
         'title',
         'active',
-        'category_id'
+        'category_id',
+        'description'
     ];
 
     public function category(){
