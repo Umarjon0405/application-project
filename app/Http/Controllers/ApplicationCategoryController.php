@@ -20,6 +20,7 @@ class ApplicationCategoryController extends Controller
         $data = $this->applicationCategory
             ->where('title', 'LIKE', "%$search%")
             ->with(['type_count'])
+            ->orderBy('id', 'asc')
             ->paginate(env('PG', 10));
         return UniversalResource::collection($data);
     }

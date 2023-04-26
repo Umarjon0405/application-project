@@ -20,6 +20,7 @@ class ApplicationTypeController extends Controller
         $search = request('search');
         $data = $this->applicationType
         ->where('title', 'LIKE', "%$search%")
+        ->orderBy('id', 'asc')
         ->with(['category'])->paginate(env('PG', 10));
         return UniversalResource::collection($data);
     }
