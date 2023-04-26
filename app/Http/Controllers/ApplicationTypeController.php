@@ -35,7 +35,14 @@ class ApplicationTypeController extends Controller
                 'category_id' => $request['category_id']
             ]);
             $reqDoc = $this->separateDocuments($type->id, $request['description']);
-            $this->requiredDocument->insert($reqDoc);
+            $uniqueArr = array_reduce($reqDoc, function ($result, $item) {
+                if (!isset($result[$item['type']])) {
+                    $result[$item['type']] = $item;
+                }
+                return $result;
+            });
+            $uniqueArr = array_values($uniqueArr);
+            $this->requiredDocument->insert($uniqueArr);
             DB::commit();
             return response()->json(['message' => env('MESSAGE_SUCCESS'), 'data' => $type], 201);
         } catch (\Exception $error) {
@@ -70,7 +77,14 @@ class ApplicationTypeController extends Controller
             $alreadyHave = $this->requiredDocument->where('application_type_id', $id)->pluck('type')->toArray();
             $docs = array_merge(array_diff($docs, $alreadyHave));
             $mustAdd = collect($reqDoc)->whereIn('type', $docs)->toArray();
-            $this->requiredDocument->insert($mustAdd);
+            $uniqueArr = array_reduce($mustAdd, function ($result, $item) {
+                if (!isset($result[$item['type']])) {
+                    $result[$item['type']] = $item;
+                }
+                return $result;
+            });
+            $uniqueArr = array_values($uniqueArr);
+            $this->requiredDocument->insert($uniqueArr);
             $type->update([
                 'title' => $request['title'],
                 'description' => $request['description']
