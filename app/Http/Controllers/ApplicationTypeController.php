@@ -36,6 +36,7 @@ class ApplicationTypeController extends Controller
                 'category_id' => $request['category_id']
             ]);
             $reqDoc = $this->separateDocuments($type->id, $request['description']);
+            if (!$reqDoc) return response()->json(['message' => "Kerakli belgilarni ishlatib malumotlarni kiriting!!!"], 400);
             $uniqueArr = array_reduce($reqDoc, function ($result, $item) {
                 if (!isset($result[$item['type']])) {
                     $result[$item['type']] = $item;
@@ -70,6 +71,7 @@ class ApplicationTypeController extends Controller
             $description = $request['description'];
             $type = $this->applicationType->where('id', $id)->first();
             $reqDoc = $this->separateDocuments($id, $description);
+            if (!$reqDoc) return response()->json(['message' => "Kerakli belgilarni ishlatib malumotlarni kiriting!!!"], 400);
             $docs = [];
             foreach ($reqDoc as $key => $value) {
                 $docs[] = $value['type'];
@@ -77,15 +79,17 @@ class ApplicationTypeController extends Controller
             $this->requiredDocument->where('application_type_id', $id)->whereNotIN('type', $docs)->delete();
             $alreadyHave = $this->requiredDocument->where('application_type_id', $id)->pluck('type')->toArray();
             $docs = array_merge(array_diff($docs, $alreadyHave));
-            $mustAdd = collect($reqDoc)->whereIn('type', $docs)->toArray();
-            $uniqueArr = array_reduce($mustAdd, function ($result, $item) {
-                if (!isset($result[$item['type']])) {
-                    $result[$item['type']] = $item;
-                }
-                return $result;
-            });
-            $uniqueArr = array_values($uniqueArr);
-            $this->requiredDocument->insert($uniqueArr);
+            return $mustAdd = collect($reqDoc)->whereIn('type', $docs)->toArray();
+            if ($mustAdd) {
+                $uniqueArr = array_reduce($mustAdd, function ($result, $item) {
+                    if (!isset($result[$item['type']])) {
+                        $result[$item['type']] = $item;
+                    }
+                    return $result;
+                });
+                $uniqueArr = array_values($uniqueArr);
+                $this->requiredDocument->insert($uniqueArr);
+            }
             $type->update([
                 'title' => $request['title'],
                 'description' => $request['description']
